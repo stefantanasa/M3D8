@@ -13,7 +13,8 @@ window.onload = async () => {
 
   loadData.forEach((data) => {
     let newCard = document.createElement("div");
-    newCard.classList = "card";
+    newCard.id = `card `;
+    newCard.setAttribute("id", `${data._id}`);
     newCard.style.width = "18rem";
     newCard.innerHTML = `
         <img src="${data.imageUrl}" class="card-img-top" alt="..." />
@@ -21,10 +22,17 @@ window.onload = async () => {
             <h5 class="card-title">${data.brand}</h5>
             <p class="card-text">
             ${data.description}
+            
             </p>
-            <a href="#" class="btn btn-primary">${data.price}</a>
+            <span class="badge badge-secondary">${data.price}</span>
+            
+            <a href="#" class="btn btn-success">Edit</a>
+            <a href="#" class="btn btn-danger">Del</a>
+            
           </div>
         `;
+
     getRow.appendChild(newCard);
   });
+  console.log(document.getElementById("61b0ccf54cff5f001590be53"));
 };
